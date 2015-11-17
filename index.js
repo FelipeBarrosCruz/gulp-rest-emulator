@@ -1,6 +1,7 @@
 var es = require('event-stream');
 var restEmulator = require('rest-emulator');
 var express = require('express');
+var bodyParser = require('body-parser');
 var gutil = require('gulp-util');
 var _ = require('lodash');
 var serveStatic = require('serve-static');
@@ -14,6 +15,8 @@ function gulpRestEmulator(options) {
     var app = express();
     var config = [];
     var restInstance;
+
+    app.use(bodyParser.urlencoded({ extended: false }));
 
     options = getNormalizeOptions(options);
 
