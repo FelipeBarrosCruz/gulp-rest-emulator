@@ -18,6 +18,8 @@ function gulpRestEmulator(options) {
 
     app.use(bodyParser.urlencoded({ extended: false }));
 
+    app.use(bodyParser.json())
+
     options = getNormalizeOptions(options);
 
     return es.through(read, end);
