@@ -58,7 +58,6 @@ function gulpRestEmulator(options) {
             restInstance = restEmulator(config, options.restOptions || {});
             app.use(restInstance.middleware);
         }
-
         _.each(options.root, serve);
 
         if (options.rewriteNotFound) {
